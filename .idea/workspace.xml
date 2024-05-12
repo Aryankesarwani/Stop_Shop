@@ -4,32 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c507277-1137-4110-82b1-7bc0998b1a0e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Images/Stop &amp;.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Images/Stop&amp;shop.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Images/login background.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Images/pexels-andrea-piacquadio-3775602.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Images/—Pngtree—cartoon shopping cart_4586974.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/mysql-connector-j-8.3.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/stop_shop/Cart.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/stop_shop/Database_Connection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/stop_shop/StopAndShop.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/stop_shop/all_orders.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/stop_shop/dashboard.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/stop_shop/hello-view.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="8c507277-1137-4110-82b1-7bc0998b1a0e" name="Changes" comment="Project updated" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -128,7 +103,31 @@
       <option name="presentableId" value="Default" />
       <updated>1710907307588</updated>
     </task>
+    <task id="LOCAL-00001" summary="Project updated">
+      <option name="closed" value="true" />
+      <created>1715517987813</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1715517987813</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Project updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="Project updated" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
