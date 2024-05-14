@@ -1,0 +1,4 @@
+/* styles.css */
+.menu-bar .menu .menu-item {
+    -fx-font-size: 16px;  /* Change 16px to the desired font size */
+}
