@@ -12,6 +12,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 import javafx.scene.text.*;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
@@ -72,12 +73,23 @@ public class dashboard
         LogoimageView.setFitWidth(80);
         LogoimageView.setPreserveRatio(true);
 
-        MenuBar leftBar = new MenuBar();
+        Image locationimg = new Image("C:\\Users\\18ary\\OneDrive\\Desktop\\Stop_Shop\\Images\\location.png");
+        ImageView imageView = new ImageView(locationimg);
+        imageView.setFitHeight(20);
+        imageView.setFitWidth(20);
+        imageView.setPreserveRatio(true);
 
+
+
+        MenuBar leftBar = new MenuBar();
         leftBar.setPrefHeight(20);
         Menu logoitem = new Menu("",LogoimageView);
+        Menu location = new Menu("Allahabad", imageView);
+        scene.getStylesheets().add(dashboard.class.getResource("Style.css").toExternalForm());
         leftBar.getMenus().add(logoitem);
+        leftBar.getMenus().add(location);
         logoitem.setStyle(hoverstyle);
+
 
         Menu men = new Menu("MEN");
         men.setStyle(hoverstyle);
@@ -96,8 +108,6 @@ public class dashboard
         tops.setStyle(menuitemstyle);
         dresses.setStyle(menuitemstyle);
         women.getItems().addAll(tops,dresses);
-        leftBar.getMenus().add(men);
-        leftBar.getMenus().add(women);
 
         MenuBar rightBar = new MenuBar();
 //Searchbar
@@ -153,10 +163,7 @@ public class dashboard
 //        searchBar.setOnKeyReleased(event -> {
 //            String userInput = searchBar.getText().toLowerCase();
 //            Database_Connection dbcon = new Database_Connection();
-//
-//
-//            suggestionBox.setItems(filteredSuggestions);
-//            suggestionBox.setVisible(!filteredSuggestions.isEmpty());
+//            dbcon.getQueryTable("Select ")
 //        });
 
         Cartlabel.setOnMouseClicked(new EventHandler<MouseEvent>() {
@@ -188,29 +195,14 @@ public class dashboard
         signout.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-//                System.out.println("signout clicked");
-//
-//                System.out.println("Before setting scene: Current scene is " + primaryStage.getScene());
-//                primaryStage.setScene(scene);
-//                System.out.println("After setting scene: Current scene is " + primaryStage.getScene());
-//                boolean wasMaximized = primaryStage.isMaximized();
-//                primaryStage.setMaximized(true);
-//
-//                boolean isNowMaximized = primaryStage.isMaximized();
-//
-//                System.out.println("Was maximized before calling setMaximized: " + wasMaximized);
-//                System.out.println("Is maximized after calling setMaximized: " + isNowMaximized);
-//
-//                primaryStage.setScene(scene);
-//                primaryStage.setMaximized(true);
-//                primaryStage.show();
+
                 primaryStage.setScene(scene);
                 primaryStage.setMaximized(true); // Maximize the stage
                 primaryStage.setFullScreen(true); // Set full screen
                 primaryStage.show();
                 StopAndShop stopAndShop = new StopAndShop();
                 try {
-                    stopAndShop.start(primaryStage);
+                    stopAndShop.app_login(primaryStage,scene);
                 } catch (Exception e) {
                     throw new RuntimeException(e);
                 }
@@ -225,20 +217,28 @@ public class dashboard
         spacer.setStyle(styles);
 
         HBox.setHgrow(spacer, Priority.SOMETIMES);
-        HBox menubars = new HBox(leftBar, searchBox, rightBar);
+        HBox menubars = new HBox(leftBar, searchBox, spacer, rightBar);
         menubars.setPrefWidth(1600);
-        menubars.setPrefWidth(40);
+        menubars.setPrefHeight(40);
         menubars.setStyle(styles);
 
 
-        MenuButton filterButton = new MenuButton("Filter By Price");
+        MenuButton filters = new MenuButton("Filter");
+        filters.setTranslateX(1200);
+        MenuItem all = new MenuItem("All");
+        filters.getItems().addAll(men, women, all);
+
+
+        MenuButton filterButton = new MenuButton("Sort By");
         MenuItem HtoL=new MenuItem("High to Low");
         MenuItem LtoH=new MenuItem("Low to High");
         filterButton.getItems().addAll(HtoL,LtoH);
-        HBox filter = new HBox(filterButton);
-        filterButton.setTranslateX(1100);
+        HBox filter = new HBox();
+        filter.getChildren().addAll(filters,filterButton);
+        //filterButton.setTranslateX(110);
         filter.setStyle(" -fx-background-color : black;");
         filterButton.setStyle(filterstyle);
+        filters.setStyle(filterstyle);
         filter.setPadding(new Insets(20));
 
 
@@ -261,6 +261,13 @@ public class dashboard
             prod_imgs[num]=resultSet.getString("product_img");
             num++;
         }
+        int finalnum = num;
+        all.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                display_products(primaryStage,prod_names,prod_prices,prod_imgs,finalnum,menubars,filter,username);
+            }
+        });
 
 
         String Shirtquery = "select product_name,price,product_img from products where product_category='Shirt';";
@@ -276,6 +283,9 @@ public class dashboard
             Shirtnum++;
         }
         int finalShirtnum = Shirtnum;
+
+
+
         shirts.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
@@ -535,6 +545,10 @@ public class dashboard
             int finalI = i;
 
 
+            imageView.setOnMouseClicked(event -> {
+                ProductDetails.displayProductDetails(primaryStage, dashboard_scene, prod_names[buttonInd], prod_prices[buttonInd], prod_imgs[buttonInd], username);
+            });
+
             add_to_cart_button[i].setOnAction(actionEvent ->{
                 for(int m=0;m<count[0];m++)
                 {
@@ -648,9 +662,9 @@ public class dashboard
         //Statement LtoHstmt = con.createStatement();
         String LtoHquery = filter_query;
         ResultSet LtoHresultSet = dbcon.getQueryTable(LtoHquery);
-        String LtoH_names[]=new String[70];
-        String LtoH_prices[]=new String[70];
-        String LtoH_imgs[]=new String[70];
+        String LtoH_names[]=new String[700];
+        String LtoH_prices[]=new String[700];
+        String LtoH_imgs[]=new String[700];
         int LtoHnum=0;
         while(LtoHresultSet.next()) {
             LtoH_names[LtoHnum]=LtoHresultSet.getString("product_name");

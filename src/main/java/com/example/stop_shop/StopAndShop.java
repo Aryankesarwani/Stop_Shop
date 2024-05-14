@@ -14,6 +14,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
@@ -24,6 +25,7 @@ import javafx.stage.Stage;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Objects;
 
 public class StopAndShop extends Application {
 
@@ -160,7 +162,7 @@ public class StopAndShop extends Application {
         Database_Connection dbcon = new Database_Connection();
 
 
-        Label username = new Label("Username:");
+        Label username = new Label("Username: ");
 
         username.setFont(Font.font("Tahoma", FontWeight.NORMAL, 16));
 
@@ -172,13 +174,13 @@ public class StopAndShop extends Application {
 
         entered_password.setPrefWidth(200);
 
-        Label email = new Label("Email:       ");
+        Label email = new Label("Email: ");
 
         email.setFont(Font.font("Tahoma", FontWeight.NORMAL, 16));
 
         entered_email.setPrefWidth(200);
 
-        Label contactno = new Label("Contact:   ");
+        Label contactno = new Label("Mobile Number: ");
 
         contactno.setFont(Font.font("Tahoma", FontWeight.NORMAL, 16));
 
@@ -288,13 +290,17 @@ public class StopAndShop extends Application {
         });
 
         Button back = new Button("BACK");
+        back.setStyle("-fx-background-color: #FF6347; -fx-text-fill: white;");
+        back.setAlignment(Pos.TOP_LEFT);
 
-        back.setTranslateY(-120);
+        //back.setTranslateY(-120);
         back.setTranslateX(-480);
 
         Button reset = new Button("Reset");
+        reset.setStyle("-fx-background-color: #6495ED; -fx-text-fill: white;");
 
-        reset.setOnAction(new EventHandler<ActionEvent>()
+
+          reset.setOnAction(new EventHandler<ActionEvent>()
         {
             @Override
             public void handle(ActionEvent actionEvent)
@@ -314,13 +320,14 @@ public class StopAndShop extends Application {
         });
 
         Button submit = new Button("Submit");
+        submit.setStyle("-fx-background-color: #00FF00; -fx-text-fill: white;");
 
 
 
-        HBox hBox = new HBox(11);
-        HBox hBox1 = new HBox(10);
-        HBox hBox2 = new HBox(9);
-        HBox hBox3 = new HBox(13);
+        VBox hBox = new VBox(8);
+        VBox hBox1 = new VBox(8);
+        VBox hBox2 = new VBox(8);
+        VBox hBox3 = new VBox(13);
         HBox hBox4 = new HBox(10);
         hBox4.setAlignment(Pos.CENTER_LEFT);
         reset.setTranslateX(110);
@@ -337,32 +344,43 @@ public class StopAndShop extends Application {
 
         VBox vBox = new VBox(8);
 
-        Label Signup= new Label("SIGN UP");
+        Label Signup= new Label("Create Account");
 
 
 
 
-        Signup.setFont(Font.font("Verdana", FontWeight.BOLD, FontPosture.ITALIC,35));
-        Signup.setTextFill(Color.DARKCYAN);
-        Signup.setTranslateX(95);
+        Signup.setFont(Font.font("Verdana", FontPosture.ITALIC,35));
+        Signup.setTextFill(Color.BLACK);
+        //Signup.setTranslateX(95);
         Signup.setTranslateY(-20);
 
         username_error.setTranslateX(110);
         password_error.setTranslateX(110);
         email_error.setTranslateX(110);
         contact_error.setTranslateX(110);
-        Image image=new Image("C:\\Users\\18ary\\OneDrive\\Desktop\\Stop_Shop\\Images\\Stop&shop.jpg");
+        String imagePath = "Images/Stop&shop.jpg";
+        Image image = new Image(Objects.requireNonNull(getClass().getResourceAsStream(imagePath)));
+        //Image image=new Image("C:\\Users\\18ary\\OneDrive\\Desktop\\Stop_Shop\\Images\\Stop&shop.jpg");
         ImageView imgview=new ImageView(image);
-        imgview.setFitHeight(150);
+        imgview.setFitHeight(130);
         imgview.setFitWidth(300);
-        imgview.setTranslateX(40);
+        //imgview.setTranslateX(40);
         imgview.setTranslateY(-50);
+        VBox vBox1 = new VBox(8);
+        vBox.getChildren().addAll(Signup,hBox,username_error,hBox1,password_error,hBox2,email_error,hBox3,contact_error,hBox4,signup_result,redirect);
+        //vBox.setTranslateX(500);
+        vBox.setStyle("-fx-padding: 20px;");
+        BorderStroke borderStroke = new BorderStroke(Color.LIGHTGRAY, BorderStrokeStyle.SOLID, new CornerRadii(10), BorderWidths.DEFAULT);
+        Border border = new Border(borderStroke);
+        vBox.setBorder(border);
 
-        vBox.getChildren().addAll(imgview,Signup,hBox,username_error,hBox1,password_error,hBox2,email_error,hBox3,contact_error,hBox4,signup_result,redirect);
-        vBox.setTranslateX(500);
+      // Set the border to the VBox
+      root.setBorder(border);
+        vBox1.getChildren().addAll(imgview, vBox);
+
 
         root_signup.add(back,0,0);
-        root_signup.add(vBox,2,2);
+        root_signup.add(vBox1,2,2);
 
 
         image = new Image("C:\\Users\\18ary\\OneDrive\\Desktop\\Stop_Shop\\Images\\pexels-andrea-piacquadio-3775602.jpg");
@@ -371,13 +389,8 @@ public class StopAndShop extends Application {
         double width = 1600; // Set your desired width
         double height = 800; // Set your desired height
 
-        BackgroundSize backgroundSize = new BackgroundSize(width, height, false, false, false, false);
-        BackgroundImage backgroundImage = new BackgroundImage(image, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, backgroundSize);
-        Background background = new Background(backgroundImage);
-        //Background background = new Background(backgroundImage);
-        root_signup.setBackground(background);
-
         root_signup.setAlignment(Pos.CENTER);
+
 
         scene.setRoot(root_signup);
         stage.setMinWidth(1000);
@@ -702,6 +715,18 @@ public class StopAndShop extends Application {
                 }catch (Exception e){
                     e.printStackTrace();
                 }
+            }
+        });
+        scene.setOnKeyPressed(event -> {
+            if (event.getCode() == KeyCode.ENTER) {
+                try {
+                    app_login(stage,scene);
+
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                } // Trigger button action
             }
         });
         login.setOnAction(new EventHandler<ActionEvent>()

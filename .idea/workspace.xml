@@ -4,7 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c507277-1137-4110-82b1-7bc0998b1a0e" name="Changes" comment="Project updated" />
+    <list default="true" id="8c507277-1137-4110-82b1-7bc0998b1a0e" name="Changes" comment="Project updated">
+      <change afterPath="$PROJECT_DIR$/Images/location.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/stop_shop/ProductDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/searchicon.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/searchicon.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/searchicon.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stop_shop/StopAndShop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/stop_shop/StopAndShop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stop_shop/dashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/stop_shop/dashboard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,8 +28,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JavaFXApplication" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -36,23 +46,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/18ary/.m2/repository/mysql/mysql-connector-java/8.0.29/mysql-connector-java-8.0.29.jar&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/18ary/OneDrive/Desktop/Stop_Shop/Images",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.example.stop_shop" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\18ary\OneDrive\Desktop\Stop_Shop\Images" />
       <recent name="C:\Users\18ary\OneDrive\Desktop\Stop_Shop\lib" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\18ary\OneDrive\Desktop\Stop_Shop" />
+      <recent name="C:\Users\18ary\OneDrive\Desktop\Stop_Shop\src\main\resources" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -60,7 +77,7 @@
       <command value="mvn compile" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.StopAndShop">
+  <component name="RunManager">
     <configuration name="Database_Connection" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.stop_shop.Database_Connection" />
       <module name="Stop_Shop" />
@@ -111,7 +128,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715517987813</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Project updated">
+      <option name="closed" value="true" />
+      <created>1715518168970</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1715518168970</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -140,16 +165,6 @@
           <properties class="java.sql.SQLException" package="java.sql" />
           <option name="timeStamp" value="7" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/stop_shop/StopAndShop.java</url>
-          <line>376</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/stop_shop/StopAndShop.java</url>
-          <line>599</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

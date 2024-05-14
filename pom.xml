@@ -15,16 +15,17 @@
     </properties>
 
     <dependencies>
+        <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.33</version>
+        </dependency>
 
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-fxml</artifactId>
             <version>20.0.1</version>
-        </dependency>
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.29</version> <!-- Or the version you prefer -->
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -43,6 +44,18 @@
             <artifactId>javafx-graphics</artifactId>
             <version>20.0.1</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpcore</artifactId>
+            <version>4.4.14</version>
+        </dependency>
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20240303</version>
+        </dependency>
+
     </dependencies>
 
     <build>
