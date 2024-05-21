@@ -5,8 +5,10 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -23,13 +25,14 @@ import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Objects;
 
 public class StopAndShop extends Application {
 
-    GridPane root;
+    static GridPane root;
     public Label email_error = new Label("");
     public Label contact_error = new Label("");
     public Label username_error = new Label("");
@@ -184,7 +187,7 @@ public class StopAndShop extends Application {
 
         contactno.setFont(Font.font("Tahoma", FontWeight.NORMAL, 16));
 
-        entered_contact.setPrefWidth(200);
+
         entered_contact.textProperty().addListener(new ChangeListener<String>()
         {
             @Override
@@ -359,8 +362,8 @@ public class StopAndShop extends Application {
         email_error.setTranslateX(110);
         contact_error.setTranslateX(110);
         String imagePath = "Images/Stop&shop.jpg";
-        Image image = new Image(Objects.requireNonNull(getClass().getResourceAsStream(imagePath)));
-        //Image image=new Image("C:\\Users\\18ary\\OneDrive\\Desktop\\Stop_Shop\\Images\\Stop&shop.jpg");
+        //Image image = new Image(imagePath);
+        Image image=new Image("C:\\Users\\18ary\\OneDrive\\Desktop\\Stop_Shop\\Images\\Stop&shop.jpg");
         ImageView imgview=new ImageView(image);
         imgview.setFitHeight(130);
         imgview.setFitWidth(300);
@@ -391,6 +394,26 @@ public class StopAndShop extends Application {
 
         root_signup.setAlignment(Pos.CENTER);
 
+          entered_contact.setPrefWidth(200);
+
+          entered_username.setOnKeyPressed(event -> {
+              if (event.getCode() == KeyCode.ENTER) {
+                  entered_password.requestFocus(); // Move focus to password field
+              }
+          });
+          entered_password.setOnKeyPressed(event -> {
+              if (event.getCode() == KeyCode.ENTER) {
+                  entered_email.requestFocus(); // Move focus to password field
+              }
+          });
+          entered_email.setOnKeyPressed(event -> {
+              if (event.getCode() == KeyCode.ENTER) {
+                  entered_contact.requestFocus(); // Move focus to password field
+              }
+          });
+          entered_contact.setOnKeyPressed(event -> {
+              if (event.getCode() == KeyCode.ENTER) submit.fire();// Move focus to password field
+          });
 
         scene.setRoot(root_signup);
         stage.setMinWidth(1000);
@@ -600,20 +623,15 @@ public class StopAndShop extends Application {
 
 
     }
-    @Override
-//    public void start(Stage stage) throws IOException {
-//        FXMLLoader fxmlLoader = new FXMLLoader(StopAndShop.class.getResource("hello-view.fxml"));
-//        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
-//        stage.setTitle("Hello!");
-//        stage.setScene(scene);
-//        stage.show();
-//    }
 
     public void start(Stage stage) throws Exception
     {
         stage.setTitle("STOP & SHOP");
+        
         GridPane rootnode = new GridPane();
         rootnode.setAlignment(Pos.CENTER_RIGHT);
+        Scene scene = new Scene(rootnode);
+        root=rootnode;
 
         rootnode.setHgap(1000);
         rootnode.setVgap(1000);
@@ -644,17 +662,39 @@ public class StopAndShop extends Application {
         password_error_login.setTranslateX(125);
 
         hBox1.getChildren().addAll(password, passwordField);
+        Label forgot = new Label("Forgot Password");
+        forgot.setAlignment(Pos.CENTER);
+        forgot.setTranslateX(100);
+        forgot.setTextFill(Color.RED);
 
         VBox vBox = new VBox(5);
         vBox.setTranslateX(-170);
 
         Button login = new Button("Login");
+        login.setPrefWidth(200);
+        login.setTextFill(Color.WHITE);
+        login.setBackground(Background.fill(Color.DARKCYAN));
+        login.getStyleClass().add("login");
+        scene.getStylesheets().add(getClass().getResource("Style.css").toExternalForm());
+
         login.setTranslateX(40);
+
+
+        usernametext.setOnKeyPressed(event -> {
+            if (event.getCode() == KeyCode.ENTER) {
+                passwordField.requestFocus(); // Move focus to password field
+            }
+        });
+        passwordField.setOnKeyPressed(event -> {
+            if (event.getCode() == KeyCode.ENTER) {
+                login.fire(); // Move focus to password field
+            }
+        });
 
         Label not_member = new Label("Not a member yet?");
         not_member.setAlignment(Pos.CENTER);
         not_member.setTranslateX(100);
-        not_member.setTextFill(Color.RED);
+        not_member.setTextFill(Color.GREEN);
 
         Label signup = new Label("SignUp");
         signup.setTranslateX(110);
@@ -669,11 +709,12 @@ public class StopAndShop extends Application {
         HBox hBox2 = new HBox(5);
 
         hBox2.getChildren().addAll(login);
-
         hBox2.setAlignment(Pos.CENTER);
+
 
         HBox hBox3 = new HBox(2);
         hBox3.getChildren().addAll(not_member,signup);
+
         Image image=new Image("C:\\Users\\18ary\\OneDrive\\Desktop\\Stop_Shop\\Images\\Stop&shop.jpg");
         ImageView imgview=new ImageView(image);
         imgview.setFitHeight(150);
@@ -681,7 +722,7 @@ public class StopAndShop extends Application {
         imgview.setTranslateX(40);
         imgview.setTranslateY(-50);
 
-        vBox.getChildren().addAll(imgview,login_text,hBox,username_error_login, hBox1,password_error_login, hBox2,hBox3);
+        vBox.getChildren().addAll(imgview,login_text,hBox,username_error_login, hBox1,password_error_login, hBox2,forgot,hBox3);
 
 
         rootnode.add(vBox, 0, 0);
@@ -698,12 +739,13 @@ public class StopAndShop extends Application {
 
         rootnode.setBackground(background);
 
-        Scene scene = new Scene(rootnode);
-        root=rootnode;
+
 
         stage.setMaximized(true);
         stage.setScene(scene);
         stage.show();
+
+
 
         signup.setOnMouseClicked(new EventHandler<MouseEvent>()
         {
@@ -717,18 +759,7 @@ public class StopAndShop extends Application {
                 }
             }
         });
-        scene.setOnKeyPressed(event -> {
-            if (event.getCode() == KeyCode.ENTER) {
-                try {
-                    app_login(stage,scene);
 
-                } catch (SQLException throwables) {
-                    throwables.printStackTrace();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                } // Trigger button action
-            }
-        });
         login.setOnAction(new EventHandler<ActionEvent>()
         {
             @Override

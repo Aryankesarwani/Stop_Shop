@@ -10,6 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
@@ -25,6 +26,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+
+//import static io.jsonwebtoken.lang.Strings.capitalize;
 
 public class dashboard
 {
@@ -84,10 +87,12 @@ public class dashboard
         MenuBar leftBar = new MenuBar();
         leftBar.setPrefHeight(20);
         Menu logoitem = new Menu("",LogoimageView);
-        Menu location = new Menu("Allahabad", imageView);
+        Menu menu = new Menu("Allahabad", imageView);
+
         scene.getStylesheets().add(dashboard.class.getResource("Style.css").toExternalForm());
         leftBar.getMenus().add(logoitem);
-        leftBar.getMenus().add(location);
+        leftBar.getMenus().add(menu);
+
         logoitem.setStyle(hoverstyle);
 
 
@@ -118,12 +123,12 @@ public class dashboard
 
         // Create search bar
         TextField searchBar = new TextField();
-        searchBar.setPromptText("Search...");
+        searchBar.setPromptText("Search by Category...");
         searchBar.setPrefWidth(800);
         //chBar.setPrefSize(800,50);
         //searchBar.setAlignment(Pos.CENTER);
 
-        // Create layout to hold the search icon and search bar
+        // Created a layout to hold the search icon and search bar
         HBox searchBox = new HBox(5);
         searchBox.setAlignment(Pos.CENTER_LEFT);
         searchBox.getChildren().addAll(searchIcon, searchBar);
@@ -160,12 +165,6 @@ public class dashboard
         rightBar.getMenus().add(account);
         rightBar.getMenus().add(cartItem);
 
-//        searchBar.setOnKeyReleased(event -> {
-//            String userInput = searchBar.getText().toLowerCase();
-//            Database_Connection dbcon = new Database_Connection();
-//            dbcon.getQueryTable("Select ")
-//        });
-
         Cartlabel.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent MouseEvent) {
@@ -196,16 +195,16 @@ public class dashboard
             @Override
             public void handle(ActionEvent actionEvent) {
 
-                primaryStage.setScene(scene);
-                primaryStage.setMaximized(true); // Maximize the stage
-                primaryStage.setFullScreen(true); // Set full screen
-                primaryStage.show();
                 StopAndShop stopAndShop = new StopAndShop();
                 try {
-                    stopAndShop.app_login(primaryStage,scene);
+                    stopAndShop.start(primaryStage);
                 } catch (Exception e) {
                     throw new RuntimeException(e);
                 }
+//                primaryStage.setScene(scene);
+//                primaryStage.setMaximized(true); // Maximize the stage
+                primaryStage.setFullScreen(true); // Set full screen
+//                primaryStage.show();
 
 
             }
@@ -242,6 +241,27 @@ public class dashboard
         filter.setPadding(new Insets(20));
 
 
+        searchBar.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                //display_products(primaryStage,prod_names,prod_prices,prod_imgs,finalnum,menubars,filter,username);
+                String userInput = searchBar.getText().toLowerCase();
+                //String s = capitalize(userInput);
+                switch(userInput){
+                    case "tops":
+                        tops.fire();
+                        break;
+                    case "shirts":
+                        shirts.fire();
+                        break;
+                    case "formals":
+                        formals.fire();
+                        break;
+                    default :
+                        all.fire();
+                }
+            }
+        });
 
         String query = "select product_name,price,product_img from products;";
         ResultSet resultSet = dbcon.getQueryTable(query);
@@ -343,7 +363,7 @@ public class dashboard
                 HtoL.setOnAction(new EventHandler<ActionEvent>() {
                     @Override
                     public void handle(ActionEvent actionEvent) {
-                        String HtoLquery = "select product_name,price,product_img from products where product_category='formals' order by price DESC ;";
+                        String HtoLquery = "select product_name,price,product_img from products where product_category='Formal Suit' order by price DESC ;";
                         try {
                             HightoLowFilter(primaryStage,menubars,filter,HtoLquery,username);
                         } catch (SQLException throwables) {
@@ -355,7 +375,7 @@ public class dashboard
                 LtoH.setOnAction(new EventHandler<ActionEvent>() {
                     @Override
                     public void handle(ActionEvent actionEvent) {
-                        String LtoHquery = "select product_name,price,product_img from products where product_category='formals' order by price ;";
+                        String LtoHquery = "select product_name,price,product_img from products where product_category='Formal Suit' order by price ;";
                         try {
                             LowToHighFilter(primaryStage,menubars,filter,LtoHquery,username);
                         } catch (SQLException throwables) {

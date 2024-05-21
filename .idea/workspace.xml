@@ -4,16 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c507277-1137-4110-82b1-7bc0998b1a0e" name="Changes" comment="Project updated">
-      <change afterPath="$PROJECT_DIR$/Images/location.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/stop_shop/ProductDetails.java" afterDir="false" />
+    <list default="true" id="8c507277-1137-4110-82b1-7bc0998b1a0e" name="Changes" comment="Registration updated and header updated and product details page added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/searchicon.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/searchicon.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Images/searchicon.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stop_shop/ProductDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/stop_shop/ProductDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stop_shop/ProductDetailsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/stop_shop/ProductDetailsPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stop_shop/StopAndShop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/stop_shop/StopAndShop.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stop_shop/dashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/stop_shop/dashboard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/stop_shop/Style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/stop_shop/Style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/stop_shop/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/stop_shop/hello-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,19 +46,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/18ary/OneDrive/Desktop/Stop_Shop/Images",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/18ary/OneDrive/Desktop/Stop_Shop/Images&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.example.stop_shop" />
@@ -71,13 +71,16 @@
       <recent name="C:\Users\18ary\OneDrive\Desktop\Stop_Shop" />
       <recent name="C:\Users\18ary\OneDrive\Desktop\Stop_Shop\src\main\resources" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.example.stop_shop" />
+    </key>
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="mvn compile" />
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.StopAndShop">
     <configuration name="Database_Connection" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.stop_shop.Database_Connection" />
       <module name="Stop_Shop" />
@@ -136,7 +139,23 @@
       <option name="project" value="LOCAL" />
       <updated>1715518168970</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Project updated">
+      <option name="closed" value="true" />
+      <created>1715691445535</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1715691445536</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Registration updated and header updated and product details page added">
+      <option name="closed" value="true" />
+      <created>1715691510450</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1715691510450</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -152,7 +171,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Project updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="Project updated" />
+    <MESSAGE value="Registration updated and header updated and product details page added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Registration updated and header updated and product details page added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
