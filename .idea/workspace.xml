@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c507277-1137-4110-82b1-7bc0998b1a0e" name="Changes" comment="product details page updated">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/stop_shop/Checkout.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/stop_shop/passwordEncryption.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stop_shop/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/stop_shop/Cart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stop_shop/ProductDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/stop_shop/ProductDetails.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stop_shop/StopAndShop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/stop_shop/StopAndShop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stop_shop/all_orders.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/stop_shop/all_orders.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/stop_shop/dashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/stop_shop/dashboard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-    </list>
+    <list default="true" id="8c507277-1137-4110-82b1-7bc0998b1a0e" name="Changes" comment="Checkout added again" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -179,7 +168,31 @@
       <option name="project" value="LOCAL" />
       <updated>1716284307530</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Checkout added">
+      <option name="closed" value="true" />
+      <created>1717069396015</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1717069396015</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Checkout added">
+      <option name="closed" value="true" />
+      <created>1717069579548</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1717069579548</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Checkout added again">
+      <option name="closed" value="true" />
+      <created>1717069767551</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1717069767551</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -197,7 +210,9 @@
     <MESSAGE value="Project updated" />
     <MESSAGE value="Registration updated and header updated and product details page added" />
     <MESSAGE value="product details page updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="product details page updated" />
+    <MESSAGE value="Checkout added" />
+    <MESSAGE value="Checkout added again" />
+    <option name="LAST_COMMIT_MESSAGE" value="Checkout added again" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
