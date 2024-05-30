@@ -56,8 +56,7 @@ public class all_orders {
             pos+=1;
         }
 
-        // Scene scene = new Scene(new Group());
-        //stage.setTitle("Table View Sample");
+
 
 
 

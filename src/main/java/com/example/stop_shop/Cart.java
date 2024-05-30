@@ -19,8 +19,6 @@ import javafx.scene.text.*;
 import javafx.stage.Stage;
 
 import java.sql.ResultSet;
-import java.sql.SQLException;
-
 public class Cart {
     static Database_Connection dbcon;
 
