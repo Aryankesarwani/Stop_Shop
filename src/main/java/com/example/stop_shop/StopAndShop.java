@@ -53,23 +53,6 @@ public class StopAndShop extends Application {
 
 
 
-    private static Stage primaryStage;
-    private static Scene startScene;
-
-    // Existing code...
-
-    public static void setPrimaryStage(Stage stage) {
-        primaryStage = stage;
-    }
-
-    public static void setStartScene(Scene scene) {
-        startScene = scene;
-    }
-    public void goToStartPage() {
-        primaryStage.setScene(startScene);
-    }
-
-
 
     public void app_login(Stage stage,Scene scene) throws Exception
     {
@@ -319,6 +302,7 @@ public class StopAndShop extends Application {
                 redirect.setText("");
                 signup_result.setText("");
 
+
             }
         });
 
@@ -354,7 +338,7 @@ public class StopAndShop extends Application {
 
         Signup.setFont(Font.font("Verdana", FontPosture.ITALIC,35));
         Signup.setTextFill(Color.BLACK);
-        //Signup.setTranslateX(95);
+        
         Signup.setTranslateY(-20);
 
         username_error.setTranslateX(110);
@@ -378,7 +362,7 @@ public class StopAndShop extends Application {
         vBox.setBorder(border);
 
       // Set the border to the VBox
-      root.setBorder(border);
+       root.setBorder(border);
         vBox1.getChildren().addAll(imgview, vBox);
 
 
@@ -757,6 +741,7 @@ public class StopAndShop extends Application {
                 }catch (Exception e){
                     e.printStackTrace();
                 }
+
             }
         });
 
@@ -773,6 +758,7 @@ public class StopAndShop extends Application {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
+
 
             }
         });

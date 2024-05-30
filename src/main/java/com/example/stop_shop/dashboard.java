@@ -59,7 +59,7 @@ public class dashboard
                 "-fx-font-size:25px;" +
                         "-fx-padding:10px;" +
                          " -fx-background-color : #C6DEF1;"+
-                        " -fx-background-color : #b2c7d8;"+
+                        " -fx-background-color : #b2c8d8;"+
                         "-fx-font-color:#FDFCDC;";
         String hoverstyle= "-fx-background-color: transparent;";
 
@@ -125,8 +125,7 @@ public class dashboard
         TextField searchBar = new TextField();
         searchBar.setPromptText("Search by Category...");
         searchBar.setPrefWidth(800);
-        //chBar.setPrefSize(800,50);
-        //searchBar.setAlignment(Pos.CENTER);
+
 
         // Created a layout to hold the search icon and search bar
         HBox searchBox = new HBox(5);
@@ -189,6 +188,7 @@ public class dashboard
                 } catch (SQLException throwables) {
                     throwables.printStackTrace();
                 }
+
             }
         });
         signout.setOnAction(new EventHandler<ActionEvent>() {
@@ -205,6 +205,7 @@ public class dashboard
 //                primaryStage.setMaximized(true); // Maximize the stage
                 primaryStage.setFullScreen(true); // Set full screen
 //                primaryStage.show();
+
 
 
             }
@@ -260,6 +261,7 @@ public class dashboard
                     default :
                         all.fire();
                 }
+
             }
         });
 
@@ -286,6 +288,7 @@ public class dashboard
             @Override
             public void handle(ActionEvent actionEvent) {
                 display_products(primaryStage,prod_names,prod_prices,prod_imgs,finalnum,menubars,filter,username);
+
             }
         });
 
@@ -321,6 +324,7 @@ public class dashboard
                             throwables.printStackTrace();
                         }
 
+
                     }
                 });
                 LtoH.setOnAction(new EventHandler<ActionEvent>() {
@@ -333,8 +337,10 @@ public class dashboard
                             throwables.printStackTrace();
                         }
 
+
                     }
                 });
+
 
 
             }
@@ -370,6 +376,7 @@ public class dashboard
                             throwables.printStackTrace();
                         }
 
+
                     }
                 });
                 LtoH.setOnAction(new EventHandler<ActionEvent>() {
@@ -382,8 +389,10 @@ public class dashboard
                             throwables.printStackTrace();
                         }
 
+
                     }
                 });
+
             }
         });
 
@@ -404,16 +413,17 @@ public class dashboard
         tops.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle( ActionEvent actionEvent) {
-                display_products(primaryStage,Tp_names,Tp_prices,Tp_imgs, finalTpnum,menubars,filter,username);
+                display_products(primaryStage, Tp_names, Tp_prices, Tp_imgs, finalTpnum, menubars, filter, username);
                 HtoL.setOnAction(new EventHandler<ActionEvent>() {
                     @Override
                     public void handle(ActionEvent actionEvent) {
                         String HtoLquery = "select product_name,price,product_img from products where product_category='tops' order by price DESC ;";
                         try {
-                            HightoLowFilter(primaryStage,menubars,filter,HtoLquery,username);
+                            HightoLowFilter(primaryStage, menubars, filter, HtoLquery, username);
                         } catch (SQLException throwables) {
                             throwables.printStackTrace();
                         }
+
 
                     }
                 });
@@ -422,10 +432,11 @@ public class dashboard
                     public void handle(ActionEvent actionEvent) {
                         String LtoHquery = "select product_name,price,product_img from products where product_category='tops' order by price ;";
                         try {
-                            LowToHighFilter(primaryStage,menubars,filter,LtoHquery,username);
+                            LowToHighFilter(primaryStage, menubars, filter, LtoHquery, username);
                         } catch (SQLException throwables) {
                             throwables.printStackTrace();
                         }
+
 
                     }
                 });
@@ -461,6 +472,7 @@ public class dashboard
                             throwables.printStackTrace();
                         }
 
+
                     }
                 });
                 LtoH.setOnAction(new EventHandler<ActionEvent>() {
@@ -473,9 +485,9 @@ public class dashboard
                             throwables.printStackTrace();
                         }
 
+
                     }
                 });
-
 
 
             }
@@ -491,6 +503,7 @@ public class dashboard
                 } catch (SQLException throwables) {
                     throwables.printStackTrace();
                 }
+
             }
         });
 
@@ -503,6 +516,7 @@ public class dashboard
                 } catch (SQLException throwables) {
                     throwables.printStackTrace();
                 }
+
 
             }
         });
@@ -526,8 +540,7 @@ public class dashboard
 
         VBox tiles[] = new VBox[pcount];
         Button add_to_cart_button[] = new Button[pcount];
-        //final int[] lastClickedIndex = {-1};
-        final int[] lastClickedIndex = {-1};
+
 
         for (int i = 0; i <pcount; i++)
         {
@@ -607,6 +620,7 @@ public class dashboard
                 public void handle(ActionEvent actionEvent) {
                     count[0]++;
                     quantity.setText(Integer.toString(count[0]));
+
                 }
             }));
             reduceProd.setOnAction((new EventHandler<ActionEvent>() {
@@ -617,6 +631,7 @@ public class dashboard
                         count[0]--;
                         quantity.setText(Integer.toString(count[0]));
                     }
+
                 }
             }));
             int labelCount=count[0];

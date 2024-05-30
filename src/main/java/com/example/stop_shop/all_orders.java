@@ -201,7 +201,6 @@ public class all_orders {
                 stage.setFullScreen(true);
                 stage.show();
 
-
             }
         });
     }

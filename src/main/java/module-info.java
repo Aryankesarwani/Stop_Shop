@@ -4,7 +4,7 @@ module com.example.stop_shop {
     requires java.sql;
     requires java.desktop;
     requires mysql.connector.j;
-    requires twilio;
+
 
 
     opens com.example.stop_shop to javafx.fxml;

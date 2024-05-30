@@ -39,13 +39,10 @@ public class ProductDetails {
 
         leftBox.getChildren().add(imageView);
 
-        // Create a VBox for the right side (product details, buttons, and additional image)
         VBox rightBox = new VBox(20);
         rightBox.setPadding(new Insets(20));
         rightBox.setAlignment(Pos.CENTER);
-        //rightBox.setStyle("-fx-background-color: #333; -fx-border-color: lightgray; -fx-border-radius: 10; -fx-padding: 20;");
 
-        // Create labels for product details
         Label nameLabel = new Label("Product Name: " + prodName);
         //nameLabel.setStyle("-fx-font-size: 20px; -fx-text-fill: white;");
         Label priceLabel = new Label("Price: $" + prodPrice);
@@ -90,6 +87,7 @@ public class ProductDetails {
                 {
                     throwables.printStackTrace();
                 }
+
             }
         });
         buyNowButton.setOnAction(new EventHandler<ActionEvent>() {
@@ -116,6 +114,7 @@ public class ProductDetails {
                 } catch (Exception e) {
                     throw new RuntimeException(e);
                 }
+
             }
         });
 

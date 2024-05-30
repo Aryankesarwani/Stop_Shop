@@ -8,7 +8,6 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.ScrollBar;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -107,6 +106,7 @@ public class Cart {
             Text text_2 = new Text("Description:" + pdes);
             TextFlow description = new TextFlow(text_2);
             description.setStyle("-fx-font-size:15");
+
             Label quantity = new Label("Quantity:" + prod_qty[i]);
             quantity.setStyle("-fx-font-size:15");
             removeLabel[i] = new Label("");
@@ -162,6 +162,8 @@ public class Cart {
         javafx.scene.control.ScrollPane sp1 = new ScrollPane();
         sp1.setFitToWidth(true);
         sp1.setFitToHeight(true);
+
+
         Scene cart_scene =new Scene(sp1, 800, 600);
         primaryStage.setScene(cart_scene);
         cart_scene.setRoot(sp1);
@@ -187,14 +189,13 @@ public class Cart {
         place_order.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                try {
-                    dashboard.place_order();
-                    message.setText("YOUR ORDER HAS BEEN PLACED!");
-                    message.setFont(Font.font("Tahoma", FontWeight.NORMAL, 13));
-                    message.setTextFill(Color.WHITE);
-                } catch (SQLException throwables) {
-                    throwables.printStackTrace();
-                }
+                //check.start(primaryStage,cart_scene);
+                Checkout.Check(primaryStage,cart_scene);
+                //dashboard.place_order();
+                message.setText("YOUR ORDER HAS BEEN PLACED!");
+                message.setFont(Font.font("Tahoma", FontWeight.NORMAL, 13));
+                message.setTextFill(Color.WHITE);
+
             }
         });
     }
